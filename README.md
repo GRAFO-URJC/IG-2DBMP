@@ -60,9 +60,9 @@ In this paper, we present an efficient heuristic algorithm based on the Iterated
 ├── paper/               # Paper and related materials
 │   └── results/         # Paper results (deatiled result per instance)
 |   
-├── results/             # Experimental results
+├── results/             # Experimental result, generated after code execution
 ├── LICENSE              # License file
-├── README.md            # This file
+└── README.md            # Project documentation (this file)
 ```
 
 ---
