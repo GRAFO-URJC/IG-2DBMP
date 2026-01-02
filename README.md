@@ -1,30 +1,33 @@
-# Title of the Paper Here <a href="https://doi.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/DOI_logo.svg" alt="DOI" width="20"/></a> <a href="https://doi.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Zenodo-gradient-square.svg" alt="Zenodo" width="60"/></a>
+# Efficient iterated greedy for the two-dimensional bandwidth minimization problem <a href="https://doi.org/10.1016/j.ejor.2022.09.004"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/DOI_logo.svg" alt="DOI" width="20"/></a>
 
-<!-- Load Material Symbols Outlined for icons -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Code](https://img.shields.io/badge/Code-Java-orange.svg)]()
+[![Code](https://img.shields.io/badge/Code-Java_16-orange.svg)]()
 [![Framework](https://img.shields.io/badge/Powered_by-MORK-green.svg)](https://mork-optimization.com/)
-
 
 ## Abstract
 
-Paper under review. To be added upon acceptance.
+Graph layout problems are a family of combinatorial optimization problems that consist of finding an embedding of the vertices of an input graph into a host graph such that an objective function is optimized. Within this family of problems falls the so-called Two-Dimensional Bandwidth Minimization Problem (2DBMP). The 2DBMP aims to minimize the maximum distance between each pair of adjacent vertices of the input graph when it is embedded into a grid host graph.
+
+In this paper, we present an efficient heuristic algorithm based on the Iterated Greedy (IG) framework hybridized with a new local search strategy to tackle the 2DBMP. Particularly, we propose different designs for the main IG procedures (i.e., construction, destruction, and reconstruction) based on the trade-off between intensification and diversification. Additionally, the improvement method incorporates three advanced strategies: an efficient way to evaluate the objective function of neighbor solutions, a tiebreak criterion to deal with "flat landscapes", and a neighborhood reduction technique. Extensive experimentation was carried out to assess the IG performance over state-of-the-art methods, emerging our approach as the most competitive algorithm. Specifically, IG finds the best solutions for all instances considered in considerably less execution time.
 
 ## Authors
 
-- First Author <sup>1,*</sup> <a href="mailto:first.author@urjc.es" aria-label="First Author Email"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" width="20" style="vertical-align:middle;"/></a> <a href="https://orcid.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="20" style="vertical-align:middle;"/></a>
-- Second Author <sup>2</sup> <a href="mailto:second.author@institution.edu" aria-label="Second Author Email"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" width="20" style="vertical-align:middle;"/></a> <a href="https://orcid.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="20" style="vertical-align:middle;"/></a>
+
+- Sergio Cavero <sup>1</sup> <a href="mailto:sergio.cavero@urjc.es" aria-label="Sergio Cavero Email"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" width="20" style="vertical-align:middle;"/></a> <a href="https://orcid.org/0000-0002-5258-5915"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="20" style="vertical-align:middle;"/></a>
+- Eduardo G. Pardo <sup>1,*</sup> <a href="mailto:eduardo.pardo@urjc.es" aria-label="Eduardo G. Pardo Email"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" width="20" style="vertical-align:middle;"/></a> <a href="https://orcid.org/0000-0002-6247-5269"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="20" style="vertical-align:middle;"/></a>
+- Abraham Duarte <sup>1</sup> <a href="mailto:abraham.duarte@urjc.es" aria-label="Abraham Duarte Email"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Email_Shiny_Icon.svg" alt="email" width="20" style="vertical-align:middle;"/></a> <a href="https://orcid.org/0000-0002-4532-3124"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="20" style="vertical-align:middle;"/></a>
+
 
 ### Affiliations
 
 1. Departamento de Informática y Estadística, Universidad Rey Juan Carlos — C. Tulipán, s/n, Móstoles, 28933, Madrid, Spain
-2. Department Name, Institution Name — Address, City, Postal Code, Country
 
 <sup>*</sup>Corresponding author.
 
 ---
+
 
 ## Table of Contents
 
@@ -39,23 +42,27 @@ Paper under review. To be added upon acceptance.
 - [Funding](#funding)
 - [Citation](#citation)
 - [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
-- [Powered by MORK](#powered-by-mork-metaheuristic-optimization-framework)
+- [Powered by MORK](#powered-by-mork-metaheuristic-framewoRK)
 
 ---
 
 ## Repository Structure
 
+
 ```
 .
-├── instances/          # Problem instances
-├── results/           # Experimental results
-├── src/               # Source code
-├── target/            # Compiled artifacts
-├── analysis/          # Analysis scripts
-├── LICENSE            # License file
-├── README.md          # This file
-└── pom.xml            # Maven configuration
+├── code/                # Source code
+├── instances/           # Problem instances
+│   ├── harwell-boeing/  # Harwell-Boeing dataset
+│   ├── prelim/          # Preliminary dataset
+│   └── regular/         # Regular graphs dataset
+|
+├── paper/               # Paper and related materials
+│   └── results/         # Paper results (deatiled result per instance)
+|   
+├── results/             # Experimental results
+├── LICENSE              # License file
+├── README.md            # This file
 ```
 
 ---
@@ -64,39 +71,20 @@ Paper under review. To be added upon acceptance.
 
 ## Datasets
 
-Instances are categorized in different datasets inside the `instances` folder.
+The computational tests are performed over 90 instances previously reported in the literature. All instances have been made publicly available at [https://www.heuristicas.es/](https://www.heuristicas.es/).
 
 ### Instance Format
 
-Each instance is encoded as a plain text file representing a graph:
-- The first line contains the number of vertices `n` and edges `m`.
-- Each subsequent line contains a pair of integers `u v` representing an edge between vertex `u` and vertex `v`.
-- Vertices are indexed from 0 to n-1.
-
-Example:
-```
-10 15
-0 1
-0 2
-1 3
-...
-```
+The instances represent graphs $G=(V_G, E_G)$ to be embedded into a grid host graph.
 
 ### Dataset Statistics
 
-| Dataset | Instances | Vertices Range | Edges Range | Description |
+| Dataset | Instances | Vertices $|V_G|$ | Edges $|E_G|$ | Description |
 |---------|-----------|----------------|-------------|-------------|
-| Small   | 10        | 10-50          | 15-100      | Small test instances |
-| Medium  | 20        | 50-200         | 100-500     | Medium-sized instances |
-| Large   | 15        | 200-1000       | 500-5000    | Large benchmark instances |
+| **Small Graphs** | 45 | 5 - 21 | 6 - 190 | Topologically diverse small graphs. |
+| **Harwell-Boeing** | 45 | 48 - 960 | 78 - 7442 | Representative sparse matrices from the Harwell-Boeing collection. |
 
-## Code Execution
-
-### Building the Project
-
-```bash
-mvn clean package
-```
+## Code Execution (Java project using MORK)
 
 ### Running Experiments
 
@@ -104,26 +92,29 @@ Execution of the program can be done via the command line.
 
 **Example 1:** Execute default experiment with the default set of instances
 ```bash
-java -jar target/code.jar 
+java -jar code/TDBMP.jar
 ```
 
-**Example 2:** Execute using a different set of instances located inside the `newinstances` folder
+**Example 2:** Execute using a different set of instances located inside the `[regular](instances/regular)` folder
 ```bash
-java -jar target/code.jar --instances.path.default=newinstances
+java -jar code/TDBMP.jar --instances.path.default=instances/regular
 ```
 
-**Example 3:** Execute with custom parameters
+**Example 3:** Execute using a different set of instances located inside the `newinstances` folder
 ```bash
-java -jar target/code.jar --instances.path.default=newinstances --algorithm.maxIterations=1000 --seed=42
+java -jar code/TDBMP.jar --instances.path.default=newinstances
+```
+
+**Example 4:** Execute with custom parameters
+```bash
+java -jar code/TDBMP.jar --instances.path.default=newinstances --algorithm.maxIterations=1000 --seed=42
 ```
 
 ### Configuration Options
 
 Available command-line parameters:
-- `--instances.path.default`: Path to instances folder (default: `instances`)
-- `--algorithm.maxIterations`: Maximum number of iterations (default: `1000`)
-- `--algorithm.populationSize`: Population size for metaheuristics (default: `100`)
-- `--seed`: Random seed for reproducibility (default: `0`)
+- `--instances.path.default`: Path to instances folder (default: `./instances/prelim`)
+- `--seed`: Random seed for reproducibility (default: `1234`)
 - `--output.path`: Output directory for results (default: `results`)
 
 ## Requirements
@@ -150,77 +141,74 @@ Experimental results are stored in the `results` folder after execution. Each re
 
 Results can be analyzed using the provided visualization scripts in the `analysis` folder.
 
+
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)** License.
 
-### MIT License Summary
+### License Summary
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
+**You are free to:**
+- **Share** — copy and redistribute the material in any medium or format
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+- **NonCommercial** — You may not use the material for commercial purposes.
+- **NoDerivatives** — If you remix, transform, or build upon the material, you may not distribute the modified material.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+**No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+### Notices
+
+You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+
+No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+For the full license text, see: [https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 **Alternative licenses:** If you require a different license for commercial or academic use, please contact the corresponding author.
 
 ## Funding
 
-This research was supported by:
+This research has been partially supported by:
 
-- **Grant Name/Number**: [Funding Agency Name] - Project Title (Grant #XXXXX)
-- **Grant Name/Number**: [Second Funding Source] - Project Title (Grant #YYYYY)
-- **Universidad Rey Juan Carlos** - Internal Research Funding Program
+- **Ministerio de Ciencia, Innovación y Universidades** (Grants Ref. PGC2018-095322-B-C22, PID2021-1257090A-C22, and FPU19/04098)
+- **Comunidad de Madrid** and **European Regional Development Fund** (Grant Ref. P2018/TCS-4566)
 
-The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+---
 
 ## Citation
 
 If you use this work in your research, please cite our paper:
 
-### DOI
-
-<https://doi.org/XXXXXXX>
-
-### Bibtex
+<details>
+<summary><strong>BibTeX</strong></summary>
 
 ```bibtex
-@article{citeKey2024,
-  title={Title of the Paper Here},
-  author={Surname, First Name and Surname2, Second Name},
-  journal={Journal Name},
-  volume={XX},
-  number={X},
-  pages={XXX--XXX},
-  year={20XX},
-  publisher={Publisher Name},
-  doi={XXXXXXX}
+@article{Cavero2023,
+  title={Efficient iterated greedy for the two-dimensional bandwidth minimization problem},
+  author={Cavero, Sergio and Pardo, Eduardo G. and Duarte, Abraham},
+  journal={European Journal of Operational Research},
+  volume={306},
+  number={3},
+  pages={1126--1139},
+  year={2023},
+  publisher={Elsevier},
+  doi={10.1016/j.ejor.2022.09.004}
 }
 ```
+</details>
 
-### APA Format
+**APA Format:**
 
-Surname, F. N., & Surname2, S. N. (20XX). Title of the paper here. *Journal Name*, *XX*(X), XXX-XXX. https://doi.org/XXXXXXX
+Cavero, S., Pardo, E. G., & Duarte, A. (2023). Efficient iterated greedy for the two-dimensional bandwidth minimization problem. *European Journal of Operational Research, 306*(3), 1126–1139. https://doi.org/10.1016/j.ejor.2022.09.004
 
-### IEEE Format
-
-F. N. Surname and S. N. Surname2, "Title of the paper here," *Journal Name*, vol. XX, no. X, pp. XXX-XXX, 20XX, doi: XXXXXXX.
+---
 
 ## Acknowledgments
 
-We would like to thank:
-- The reviewers for their valuable feedback and suggestions
-- [Name/Organization] for providing computational resources
-- The MORK development team for their excellent framework
-- Contributors who helped improve this work
-
-## Contact
-
-For questions, issues, or collaborations, please contact:
-
-- **First Author**: [first.author@urjc.es](mailto:first.author@urjc.es)
-- **Project Issues**: [GitHub Issues](https://github.com/username/repository/issues)
-- **Project Website**: [https://project-website.com](https://project-website.com)
+We would like to thank M.A. Rodríguez et al., authors of the previous most competitive method in the state of the art (BVNS), for sharing their code with us.
 
 ## Powered by MORK (Metaheuristic Optimization framewoRK)
 
