@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail" />
 
+[![Elsevier Badge](https://img.shields.io/badge/Elsevier-FF6C00?logo=elsevier&logoColor=fff&style=flat)](https://doi.org/10.1016/j.ejor.2022.09.004)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Code](https://img.shields.io/badge/Code-Java_16-orange.svg)]()
 [![Framework](https://img.shields.io/badge/Powered_by-MORK-green.svg)](https://mork-optimization.com/)
