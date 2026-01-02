@@ -79,11 +79,10 @@ The computational tests are performed over 90 instances previously reported in t
 The instances represent graphs $G=(V_G, E_G)$ to be embedded into a grid host graph.
 
 ### Dataset Statistics
-
-| Dataset | Instances | Vertices $|V_G|$ | Edges $|E_G|$ | Description |
-|---------|-----------|----------------|-------------|-------------|
-| **Small Graphs** | 45 | 5 - 21 | 6 - 190 | Topologically diverse small graphs. |
-| **Harwell-Boeing** | 45 | 48 - 960 | 78 - 7442 | Representative sparse matrices from the Harwell-Boeing collection. |
+| Dataset           | Instances | Vertices $\lvert V_G \rvert$ | Edges $\lvert E_G \rvert$ | Description                                               |
+|-------------------|-----------|------------------------------|---------------------------|-----------------------------------------------------------|
+| **Small Graphs**  | 45        | 5 – 21                       | 6 – 190                   | Topologically diverse small graphs.                       |
+| **Harwell-Boeing**| 45        | 48 – 960                     | 78 – 7442                 | Representative sparse matrices from the Harwell-Boeing collection. |
 
 ## Code Execution (Java project using MORK)
 
