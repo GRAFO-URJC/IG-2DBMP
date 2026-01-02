@@ -6,6 +6,9 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Code](https://img.shields.io/badge/Code-Java_16-orange.svg)]()
 [![Framework](https://img.shields.io/badge/Powered_by-MORK-green.svg)](https://mork-optimization.com/)
+[![DOI](https://zenodo.org/badge/1126765424.svg)](https://doi.org/10.5281/zenodo.18132830)
+
+
 
 ## Abstract
 
